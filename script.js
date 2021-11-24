@@ -2,7 +2,7 @@
 
 let fish = 0;
 let fps = 0;
-let clickValue = 1;
+let clickValue = 0;
 
 function addFish(x) {
     fish += x;
@@ -30,11 +30,12 @@ fishPerSec();
 //Étape 2 - Minions
 
 var minous = [
-    {id:1, name:"cat", cost:10, fps:0.1, owned: 0},
-    {id:2, name:"fisher", cost:100, fps:1, owned: 0},
-    {id:3, name:"boat", cost:1000, fps:10, owned: 0},
-    {id:4, name:"net", cost:10000, fps:100, owned: 0},
-    {id:5, name:"swimmer", cost:100000, fps:1000, owned: 0},
-    {id:6, name:"mermaid", cost:1000000, fps:10000, owned: 0},
-    {id:7, name:"poseicat", cost:10000000, fps:100000, owned: 0},
+    {id:1, name:"cathand", cost:10, clickvalue:1, owned: 1},
+    {id:2, name:"cat", cost:10, fps:0.1, owned: 0},
+    {id:3, name:"fisher", cost:100, fps:1, owned: 0},
+    {id:4, name:"catcher", cost:1000, fps:10, owned: 0},
+    {id:5, name:"net", cost:10000, fps:100, owned: 0},
+    {id:6, name:"swimmer", cost:100000, fps:1000, owned: 0},
+    {id:7, name:"mermaid", cost:1000000, fps:10000, owned: 0},
+    {id:8, name:"poseicat", cost:10000000, fps:100000, owned: 0},
 ]
