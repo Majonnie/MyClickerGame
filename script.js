@@ -17,8 +17,6 @@ let fish = 0;
 let fps = 0;
 let clickValue = 0;
 
-
-
 function addFish(x) {
     fish += x;
 }
@@ -30,7 +28,12 @@ function displayFish() {
 }
 
 function fishPerSec() {
-    return setInterval(clickFish, 1000, fps);
+    setInterval(test, 1000, fps);
+}
+
+function test() {
+    console.log(fps);
+    clickFish(fps);
 }
 
 function clickFish(value) {
@@ -39,11 +42,10 @@ function clickFish(value) {
     displayFish();
 }
 
-
 let total = 0;
 function getFps() {
     total = 0;
-    minous.forEach(minou => getValues(minou));
+    minous.forEach(getValues);
     fps = total;
 }
 
@@ -55,17 +57,38 @@ function getValues(minou) {
         }
 }
 
+
+
 function buyMinou(id) {
-    minous.find(minou => minou.id === id).owned += 1;
+    var minou = minous.find(minou => minou.id === id)
+    minou.owned += 1;
+    fish -= minou.cost;
+    minou.cost = Math.floor(minou.cost*1.15);
+    console.log(minou.cost)
     refresh();
 }
 
-getFps();
-const fpsTimer = fishPerSec();
+function checkStore() {
+    minous.forEach(setStoreAttributes);
+}
+
+function setStoreAttributes(minou) {
+    const card = document.querySelector("."+minou.name);
+    if ( fish >= minou.cost ) {
+        card.style.pointerEvents = "";
+        card.style.filter = "none"
+    } else {
+        card.style.pointerEvents = "none";
+        card.style.filter = "grayscale(50%)"
+    }
+}
+
 
 function refresh() {
     getFps();
     displayFish();
-    clearInterval(fpsTimer);
-    fishPerSec();
 }
+
+refresh();
+fishPerSec();
+setInterval(checkStore, 10)

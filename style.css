@@ -20,7 +20,7 @@ body {
 @font-face {
   font-family: "Another Danger";
   src: url("Another Danger - Demo.otf");
- }
+}
 
 .title {
   text-align: center;
@@ -29,8 +29,7 @@ body {
   font-family: "Another Danger", Arial;
 }
 
-.title span
-{
+.title span {
   font-family: "Comic Sans MS", Arial;
 }
 
@@ -84,9 +83,16 @@ body {
 /*Fiche d'un minou*/
 .store > section {
   margin: 1%;
-  color: white;
-  background-color: #10121b;
+  color: #10121b;
+  background-color: #94c2c2;
   height: fit-content;
+  padding: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.store > section:hover {
+  box-shadow: inset 0px 0px 0px 4px white;
+  cursor: pointer;
 }
 
 .store > section > div {
@@ -95,19 +101,16 @@ body {
   width: 100%;
 }
 
-.minou_info
-{
+.minou_info {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.minou_fps
-{
+.minou_fps {
   display: flex;
 }
 
-.minou_price_qty
-{
+.minou_price_qty {
   display: flex;
 }
