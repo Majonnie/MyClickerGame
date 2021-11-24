@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Clicker</title>
         <link rel="stylesheet" href="style.css">
     </head>
@@ -11,13 +12,13 @@
                 <div class="left">
                     <div class="anim"></div>
                     <div class="game">
-                        <button class="fish" onclick="clickFish()">POISSON TEMPORAIRE</button>
+                        <button class="fish" onclick="clickFish(clickValue)">POISSON TEMPORAIRE</button>
                     </div>
                 </div>
                 <div class="right">
                     <div class="stats">
-                        <h1 class="fishN">Fish : </h1>
-                        <h1 class="fishS">Fish/Second : </h1>
+                        <h1 class="fishN">Fish : 0</h1>
+                        <h1 class="fishS">Fish/Second : 1</h1>
                         <h1 class="fishC">Fish/Click : </h1>
                     </div>
                     <div class="store">
@@ -26,7 +27,7 @@
                         <div class="boat" hidden></div>
                         <div class="net" hidden></div>
                         <div class="swimmer" hidden></div>
-                        <div class="" hidden></div>
+                        <div class="mermaid" hidden></div>
                         <div class="poseicat" hidden></div>
                     </div>
                 </div>
