@@ -13,26 +13,16 @@ function changeFrame()
         //Pour le poisson (animation en 4 frames)
         if (y == 0)
         {
-            fish.style.transform = "rotate(10deg)";
+            console.log("a")
+            fish.style.transform = "rotate(30deg)";
             y = 1;
         }
 
         else if (y == 1)
         {
-            fish.style.transform = "rotate(-10deg)";
-            y = 2;
-        }
-
-        else if (y == 2)
-        {
-            fish.style.transform = "rotate(-20deg)";
-            y = 3;
-        }
-
-        else
-        {
-            fish.style.transform = "rotate(0deg)";
-            y =0;
+            console.log("b")
+            fish.style.transform = "rotate(-30deg)";
+            y = 0;
         }
 
         //Pour toutes les animations en 2 frames
@@ -50,7 +40,7 @@ function changeFrame()
             x = 0;
         }
         
-    }, 1000)
+    }, 1025)
 }
 
 changeFrame();
