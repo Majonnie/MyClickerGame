@@ -1,3 +1,18 @@
+document.querySelector('.fish').addEventListener("mousedown", function() {
+    document.querySelector('.fish').classList.add("bounce");
+})
+document.querySelector('.fish').addEventListener("mouseup", function() {
+    document.querySelector('.fish').classList.remove("bounce");
+})
+
+document.querySelector('.fish').addEventListener("mouseover", function() {
+    document.querySelector('.fish').classList.add("grow");
+})
+document.querySelector('.fish').addEventListener("mouseout", function() {
+    document.querySelector('.fish').classList.remove("grow");
+})
+
+
 function changeFrame()
 //Change la frame de l'animation toutes les secondes
 {
@@ -10,20 +25,6 @@ function changeFrame()
     var y = 0;
     setInterval(function()
     {
-        //Pour le poisson (animation en 4 frames)
-        if (y == 0)
-        {
-            console.log("a")
-            fish.style.transform = "rotate(30deg)";
-            y = 1;
-        }
-
-        else if (y == 1)
-        {
-            console.log("b")
-            fish.style.transform = "rotate(-30deg)";
-            y = 0;
-        }
 
         //Pour toutes les animations en 2 frames
         if (x == 0)
@@ -47,9 +48,9 @@ function growFish()
 {
     const fish = document.querySelector('.fish');
 
-    fish.firstElementChild.style.width = "110%";
+    fish.firstElementChild.style.transform = "scale(1.2, 1.2)";
     //On remet le poisson à sa taille de départ au bout de 375ms
-    setTimeout(() => {  fish.firstElementChild.style.width = "100%"; }, 375);
+    setTimeout(() => {  fish.firstElementChild.style.transform = "scale(1, 1)"; }, 375);
       
 }
 
