@@ -7,12 +7,37 @@ function changeFrame()
 
     //Changement chaque seconde des frames
     var x = 0;
+    var y = 0;
     setInterval(function()
     {
-        
+        //Pour le poisson (animation en 4 frames)
+        if (y == 0)
+        {
+            fish.style.transform = "rotate(10deg)";
+            y = 1;
+        }
+
+        else if (y == 1)
+        {
+            fish.style.transform = "rotate(-10deg)";
+            y = 2;
+        }
+
+        else if (y == 2)
+        {
+            fish.style.transform = "rotate(-20deg)";
+            y = 3;
+        }
+
+        else
+        {
+            fish.style.transform = "rotate(0deg)";
+            y =0;
+        }
+
+        //Pour toutes les animations en 2 frames
         if (x == 0)
         {
-            fish.style.rotate
             cathand.setAttribute("src", "../images/cathandB.png");
 
             x = 1;
