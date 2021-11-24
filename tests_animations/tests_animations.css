@@ -13,3 +13,9 @@
 {
     width: 100%;
 }
+
+/*Transition dans la rotation du poisson*/
+.fish img
+{
+    transition: all ease-in-out 1s;
+}
