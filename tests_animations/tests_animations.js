@@ -40,7 +40,17 @@ function changeFrame()
             x = 0;
         }
         
-    }, 1025)
+    }, 1000)
+}
+
+function growFish()
+{
+    const fish = document.querySelector('.fish');
+
+    fish.firstElementChild.style.width = "110%";
+    //On remet le poisson à sa taille de départ au bout de 375ms
+    setTimeout(() => {  fish.firstElementChild.style.width = "100%"; }, 375);
+      
 }
 
 changeFrame();
