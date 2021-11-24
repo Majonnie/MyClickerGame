@@ -1,0 +1,15 @@
+.main_wrapper
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.main_wrapper div
+{
+    width: 30%;
+}
+
+.main_wrapper div img
+{
+    width: 100%;
+}
