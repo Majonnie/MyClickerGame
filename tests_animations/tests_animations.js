@@ -1,15 +1,19 @@
-document.querySelector('.fish').addEventListener("mousedown", function() {
+document.querySelector('.fish').addEventListener("click", function() {
+    console.log("down")
     document.querySelector('.fish').classList.add("bounce");
 })
 document.querySelector('.fish').addEventListener("mouseup", function() {
+    console.log("up")
     document.querySelector('.fish').classList.remove("bounce");
 })
 
-document.querySelector('.fish').addEventListener("mouseover", function() {
-    document.querySelector('.fish').classList.add("grow");
+document.querySelector('.fish_img').addEventListener("mouseover", function() {
+    console.log("hover")
+    document.querySelector('.fish_img').classList.add("grow");
 })
-document.querySelector('.fish').addEventListener("mouseout", function() {
-    document.querySelector('.fish').classList.remove("grow");
+document.querySelector('.fish_img').addEventListener("mouseout", function() {
+    console.log("nothover")
+    document.querySelector('.fish_img').classList.remove("grow");
 })
 
 
