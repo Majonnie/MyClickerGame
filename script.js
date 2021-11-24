@@ -1,7 +1,7 @@
 //Étape 2 - Minions
 
 var minous = [
-    {id:1, name:"cathand", cost:10, clickValue:1, owned: 1},
+    {id:1, name:"cathand", cost:10, fps:1, owned: 1},
     {id:2, name:"cat", cost:10, fps:0.1, owned: 0},
     {id:3, name:"fisher", cost:100, fps:1, owned: 0},
     {id:4, name:"catcher", cost:1000, fps:10, owned: 0},
@@ -17,8 +17,6 @@ let fish = 0;
 let fps = 0;
 let clickValue = 0;
 
-
-
 function addFish(x) {
     fish += x;
 }
@@ -30,7 +28,11 @@ function displayFish() {
 }
 
 function fishPerSec() {
-    return setInterval(clickFish, 1000, fps);
+    setInterval(addFps, 1000, fps);
+}
+
+function addFps() {
+    clickFish(fps);
 }
 
 function clickFish(value) {
@@ -39,33 +41,60 @@ function clickFish(value) {
     displayFish();
 }
 
-
 let total = 0;
 function getFps() {
     total = 0;
-    minous.forEach(minou => getValues(minou));
+    minous.forEach(getValues);
     fps = total;
 }
 
 function getValues(minou) {
-        if (minou.id == 1) {
-            clickValue = minou.owned * minou.clickValue;
-        } else {
-            total += minou.owned * minou.fps;
-        }
+    if (minou.id == 1) {
+        clickValue = minou.owned * minou.fps;
+    } else {
+        total += minou.owned * minou.fps;
+    }
 }
 
+
+
 function buyMinou(id) {
-    minous.find(minou => minou.id === id).owned += 1;
+    var minou = minous.find(minou => minou.id === id)
+    minou.owned += 1;
+    fish -= minou.cost;
+    minou.cost = Math.floor(minou.cost*1.15);
+    cardRefresh(minou);
     refresh();
 }
 
-getFps();
-const fpsTimer = fishPerSec();
+function checkStore() {
+    minous.forEach(setStoreAttributes);
+}
+
+function setStoreAttributes(minou) {
+    const card = document.querySelector("."+minou.name);
+    if ( fish >= minou.cost ) {
+        card.style.pointerEvents = "";
+        card.style.filter = "none"
+    } else {
+        card.style.pointerEvents = "none";
+        card.style.filter = "grayscale(100%) brightness(40%)";
+    }
+}
+
+function cardRefresh(minou) {
+    var minouDiv = document.querySelector("."+minou.name);
+    minouDiv.querySelector(".total_fps").innerHTML = minou.owned * minou.fps;
+    minouDiv.querySelector(".minou_price").innerHTML = minou.cost;
+    minouDiv.querySelector(".minou_quantity").innerHTML = minou.owned;
+}
 
 function refresh() {
     getFps();
     displayFish();
-    clearInterval(fpsTimer);
-    fishPerSec();
 }
+
+refresh();
+fishPerSec();
+minous.forEach(cardRefresh);
+setInterval(checkStore, 10)
