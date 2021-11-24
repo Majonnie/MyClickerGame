@@ -3,7 +3,6 @@
     <head>
         <title>Clicker</title>
         <link rel="stylesheet" href="style.css">
-        <script type="javascript" src="script.js"></script>
     </head>
     <body>
         <div class="main_wrapper">
@@ -11,13 +10,15 @@
             <div class="clicker">
                 <div class="left">
                     <div class="anim"></div>
-                    <div class="game"></div>
+                    <div class="game">
+                        <button class="fish" onclick="clickFish()">POISSON TEMPORAIRE</button>
+                    </div>
                 </div>
                 <div class="right">
                     <div class="stats">
-                        <h1>Fish : </h1>
-                        <h1>Fish/Second : </h1>
-                        <h1>Fish/Click : </h1>
+                        <h1 class="fishN">Fish : </h1>
+                        <h1 class="fishS">Fish/Second : </h1>
+                        <h1 class="fishC">Fish/Click : </h1>
                     </div>
                     <div class="store">
                         <div class="cat"></div>
@@ -32,4 +33,5 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="script.js"></script>
 </html>
