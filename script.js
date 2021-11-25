@@ -119,10 +119,10 @@ function refresh() {
     displayFish();
 }
 
-setInterval(function save() {
+/* setInterval(function save() {
     localStorage["minous"] = JSON.stringify(minous);
     localStorage.setItem("fish", fish);
-}, 1000);
+}, 1000); */
 
 document.querySelector('.fish').addEventListener("click", function() {clicksn++;})
 setInterval(cps, 1000);
