@@ -1,7 +1,6 @@
-//Étape 2 - Minions
-
-var minous = [
-    {id:1, name:"cathand", cost:10, fps:1, owned: 24},
+// Initialisation des variables :
+var minous = localStorage.getItem("minous") === null ? [
+    {id:1, name:"cathand", cost:10, fps:1, owned: 1},
     {id:2, name:"cat", cost:10, fps:0.1, owned: 0},
     {id:3, name:"fisher", cost:100, fps:1, owned: 0},
     {id:4, name:"catcher", cost:1000, fps:10, owned: 0},
@@ -9,14 +8,13 @@ var minous = [
     {id:6, name:"swimmer", cost:100000, fps:1000, owned: 0},
     {id:7, name:"mermaid", cost:1000000, fps:10000, owned: 0},
     {id:8, name:"poseicat", cost:10000000, fps:100000, owned: 0},
-]
-
-//Étape 1
-
-let fish = 0;
+] : JSON.parse(localStorage["minous"]);
+var fish = localStorage.getItem("fish") === null ? 0 : parseInt(localStorage.getItem("fish"));
 let fps = 0;
 let clickValue = 0;
-let totalOwned = 0;
+let total = 0;
+let clicksn = 0;
+
 
 function addFish(x) {
     fish += x;
@@ -42,7 +40,6 @@ function clickFish(value) {
     displayFish();
 }
 
-let total = 0;
 function getFps() {
     total = 0;
     minous.forEach(getValues);
@@ -60,19 +57,19 @@ function getValues(minou) {
 }
 
 
-
+    
 function buyMinou(id) {
     var minou = minous.find(minou => minou.id === id)
     var threshold = [25, 50, 100, 250, 1000];
-    minou.owned++;
-    totalOwned++;
+    minou.owned += 1;
     fish -= minou.cost;
     if (threshold.includes(minou.owned)) {
         minou.fps *= 2;
     }
     
-    if ( totalOwned % 50 == 0) {
+    if ( calculateMinouOwned() % 50 == 0) {
         minous.find(minou => minou.id === 1).fps *= 2;
+        minous.find(minou => cardRefresh(minou));
     }
     minou.cost = Math.floor(minou.cost*1.15);
     cardRefresh(minou);
@@ -96,9 +93,24 @@ function setStoreAttributes(minou) {
 
 function cardRefresh(minou) {
     var minouDiv = document.querySelector("."+minou.name);
+    minouDiv.querySelector(".base_fps").innerHTML = minou.fps.toFixed(1);
     minouDiv.querySelector(".total_fps").innerHTML = (minou.owned * minou.fps).toFixed(1);
     minouDiv.querySelector(".minou_price").innerHTML = minou.cost;
     minouDiv.querySelector(".minou_quantity").innerHTML = minou.owned;
+}
+
+function calculateMinouOwned() {
+        total = 0;
+    minous.forEach((minou) => {
+        total += minou.owned;
+    })
+    totalOwned = total;
+    return totalOwned
+}
+
+function cps() {
+    document.querySelector(".click_rate").innerHTML = clicksn + " clicks/s";
+    clicksn = 0;
 }
 
 function refresh() {
@@ -106,7 +118,16 @@ function refresh() {
     displayFish();
 }
 
+setInterval(function save() {
+    localStorage["minous"] = JSON.stringify(minous);
+    localStorage.setItem("fish", fish);
+}, 1000);
+
+document.querySelector('.fish').addEventListener("click", function() {clicksn++;})
+setInterval(cps, 1000);
+
 refresh();
 fishPerSec();
+calculateMinouOwned()
 minous.forEach(cardRefresh);
 setInterval(checkStore, 10)
