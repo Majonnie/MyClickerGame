@@ -8,11 +8,13 @@ html {
   margin: 0;
 
   font-family: Courier, Arial;
+  overflow: hidden;
 }
 
 body {
   height: 100%;
   margin: 0;
+  overflow: hidden;
 }
 
 .main_wrapper {
@@ -51,9 +53,25 @@ body {
   background-color: #c5fffd;
 }
 
+/*game display*/
 .game {
   background-color: #5386e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+
+.fish {
+  width: 25%;
+  display: inline-block;
+  position: fixed;
+}
+
+.fish img {
+  width: 100%;
+}
+/*end of game display*/
 
 .right {
   display: flex;

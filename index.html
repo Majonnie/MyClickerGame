@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Clicker</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animations.css">
     </head>
     <body>
         <div class="main_wrapper">
@@ -12,7 +13,11 @@
                 <div class="left flextwo">
                     <div class="anim flexone"></div>
                     <div class="game flextwo">
-                        <button class="fish" onclick="clickFish(clickValue)">POISSON TEMPORAIRE</button>
+                        <div onclick="clickFish(clickValue)" class="fish">
+                            <div class="fish_img">
+                            <img src="images/fish.png">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="right flexone">
@@ -259,6 +264,6 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="animations.js"></script>
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="init.js"></script>
 </html>
