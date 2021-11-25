@@ -8,13 +8,11 @@ html {
   margin: 0;
 
   font-family: Courier, Arial;
-  overflow: hidden;
 }
 
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
 }
 
 .main_wrapper {
@@ -103,6 +101,10 @@ body {
   background-color: #94c2c2;
   height: 25%;
   transition: box-shadow 0.2s;
+}
+
+section > div {
+  box-sizing: border-box;
 }
 
 .store > section:hover {

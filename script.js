@@ -1,21 +1,3 @@
-// Initialisation des variables :
-var minous = localStorage.getItem("minous") === null ? [
-    {id:1, name:"cathand", cost:10, fps:1, owned: 1},
-    {id:2, name:"cat", cost:10, fps:0.1, owned: 0},
-    {id:3, name:"fisher", cost:100, fps:1, owned: 0},
-    {id:4, name:"catcher", cost:1000, fps:10, owned: 0},
-    {id:5, name:"net", cost:10000, fps:100, owned: 0},
-    {id:6, name:"swimmer", cost:100000, fps:1000, owned: 0},
-    {id:7, name:"mermaid", cost:1000000, fps:10000, owned: 0},
-    {id:8, name:"poseicat", cost:10000000, fps:100000, owned: 0},
-] : JSON.parse(localStorage["minous"]);
-var fish = localStorage.getItem("fish") === null ? 0 : parseInt(localStorage.getItem("fish"));
-let fps = 0;
-let clickValue = 0;
-let total = 0;
-let clicksn = 0;
-
-
 function addFish(x) {
     fish += x;
 }
@@ -57,7 +39,7 @@ function getValues(minou) {
 }
 
 
-    
+
 function buyMinou(id) {
     var minou = minous.find(minou => minou.id === id)
     var threshold = [25, 50, 100, 250, 1000];
@@ -93,10 +75,11 @@ function setStoreAttributes(minou) {
 
 function cardRefresh(minou) {
     var minouDiv = document.querySelector("."+minou.name);
-    minouDiv.querySelector(".base_fps").innerHTML = minou.fps.toFixed(1);
-    minouDiv.querySelector(".total_fps").innerHTML = (minou.owned * minou.fps).toFixed(1);
-    minouDiv.querySelector(".minou_price").innerHTML = minou.cost;
-    minouDiv.querySelector(".minou_quantity").innerHTML = minou.owned;
+    minouDiv.querySelector(".minou_name").innerHTML = minou.displayname;
+    minouDiv.querySelector(".base_fps").innerHTML = "Fish/s<br>"+minou.fps.toFixed(1);
+    minouDiv.querySelector(".total_fps").innerHTML = "Total Fish/s<br>"+(minou.owned * minou.fps).toFixed(1);
+    minouDiv.querySelector(".minou_price").innerHTML = "Price<br>"+minou.cost;
+    minouDiv.querySelector(".minou_quantity").innerHTML = "Owned<br>"+minou.owned;
 }
 
 function calculateMinouOwned() {
@@ -131,3 +114,7 @@ fishPerSec();
 calculateMinouOwned()
 minous.forEach(cardRefresh);
 setInterval(checkStore, 10)
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
