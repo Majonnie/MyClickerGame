@@ -95,43 +95,33 @@ body {
 }
 
 /*Fiche d'un minou*/
-.store > section {
-  margin: 2%;
-  color: #10121b;
-  background-color: #94c2c2;
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  background-color: #e6de7c;
+  margin: 1.5%;
   height: 25%;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.1s;
 }
 
-section > div {
-  box-sizing: border-box;
-}
-
-.store > section:hover {
-  box-shadow: inset 0px 0px 0px 4px white;
+.card:hover {
+  box-shadow: inset 0px 0px 0px 4px black;
   cursor: pointer;
 }
 
-.store > section > div {
-  display: flex;
+.picture {
+  background-size: cover;
+  background-position: center;
   height: 100%;
-  width: 100%;
+  z-index: 1000;
 }
 
-.minou_info {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  text-align: center;
-}
-
-.minou_info * {
-  height: 100%;
-}
-
-.minou_fps,
-.minou_price_qty {
-  display: flex;
+.picture img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .flexone {

@@ -3,9 +3,9 @@ function addFish(x) {
 }
 
 function displayFish() {
-    document.querySelector('.fishN').innerHTML = "Fish : " + Math.floor(fish);
-    document.querySelector('.fishS').innerHTML = "Fish/Second : " + fps.toFixed(1);
-    document.querySelector('.fishC').innerHTML = "Fish/Click : " + clickValue;
+    document.querySelector('.fishN').innerHTML = "Fish : " + formatNumber(fish);
+    document.querySelector('.fishS').innerHTML = "Fish/Second : " + formatNumber(fps);
+    document.querySelector('.fishC').innerHTML = "Fish/Click : " + formatNumber(clickValue);
 }
 
 function fishPerSec() {
@@ -20,6 +20,7 @@ function clickFish(value) {
     //Fonction appelée quand on clique sur le poisson
     addFish(value);
     displayFish();
+    checkMinouThreshold();
 }
 
 function getFps() {
@@ -75,11 +76,19 @@ function setStoreAttributes(minou) {
 
 function cardRefresh(minou) {
     var minouDiv = document.querySelector("."+minou.name);
-    minouDiv.querySelector(".minou_name").innerHTML = minou.displayname;
-    minouDiv.querySelector(".base_fps").innerHTML = "Fish/s<br>"+minou.fps.toFixed(1);
-    minouDiv.querySelector(".total_fps").innerHTML = "Total Fish/s<br>"+(minou.owned * minou.fps).toFixed(1);
-    minouDiv.querySelector(".minou_price").innerHTML = "Price<br>"+minou.cost;
-    minouDiv.querySelector(".minou_quantity").innerHTML = "Owned<br>"+minou.owned;
+    minouDiv.querySelector(".minou_name").innerHTML = minou.displayname+"<br>("+minou.owned+")";
+    minouDiv.querySelector(".minou_fps").innerHTML = "🐟/s<br>"+formatNumber(minou.owned * minou.fps);
+    minouDiv.querySelector(".minou_price").innerHTML = "Price<br>"+formatNumber(minou.cost)+"🐟";
+}
+
+function formatNumber(n) {
+    if (n >= 1000000 && n < 1000000000) {
+        return (n / 1000000).toFixed(3)+"m";
+    } else if (n >= 1000000000) {
+        return (n / 1000000000).toFixed(3)+"M";
+    } else {
+        return n.toFixed(1);
+    }
 }
 
 function calculateMinouOwned() {
@@ -89,6 +98,15 @@ function calculateMinouOwned() {
     })
     totalOwned = total;
     return totalOwned
+}
+
+function checkMinouThreshold() {
+    minous.forEach((minou) => {
+        if (fish >= minou.threshold && minou.visible == 0) {
+            document.querySelector("."+minou.name).style.visibility = 'visible';
+            minou.visible = 1;
+        }
+    })
 }
 
 function cps() {
@@ -114,6 +132,7 @@ fishPerSec();
 calculateMinouOwned()
 minous.forEach(cardRefresh);
 setInterval(checkStore, 10)
+checkMinouThreshold();
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
