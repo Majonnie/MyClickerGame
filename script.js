@@ -16,6 +16,7 @@ var minous = [
 let fish = 0;
 let fps = 0;
 let clickValue = 0;
+let totalOwned = 0;
 
 function addFish(x) {
     fish += x;
@@ -63,13 +64,14 @@ function getValues(minou) {
 function buyMinou(id) {
     var minou = minous.find(minou => minou.id === id)
     var threshold = [25, 50, 100, 250, 1000];
-    minou.owned += 1;
+    minou.owned++;
+    totalOwned++;
     fish -= minou.cost;
     if (threshold.includes(minou.owned)) {
         minou.fps *= 2;
     }
     
-    if ( calculateMinouOwned() % 50 == 0) {
+    if ( totalOwned % 50 == 0) {
         minous.find(minou => minou.id === 1).fps *= 2;
     }
     minou.cost = Math.floor(minou.cost*1.15);
@@ -97,14 +99,6 @@ function cardRefresh(minou) {
     minouDiv.querySelector(".total_fps").innerHTML = (minou.owned * minou.fps).toFixed(1);
     minouDiv.querySelector(".minou_price").innerHTML = minou.cost;
     minouDiv.querySelector(".minou_quantity").innerHTML = minou.owned;
-}
-
-function calculateMinouOwned() {
-    let totalOwned = 0;
-    minous.forEach((minou) => {
-        totalOwned += minou.owned;
-    })
-    return totalOwned
 }
 
 function refresh() {
