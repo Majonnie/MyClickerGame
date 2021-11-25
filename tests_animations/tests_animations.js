@@ -24,12 +24,13 @@ function changeFrame()
 //Change la frame de l'animation toutes les secondes
 {
     //Récupération de toutes les images à modifier
-    const fish = document.querySelector('.fish').firstElementChild;
     const cathand = document.querySelector('.cathand').firstElementChild;
+    const cat = document.querySelector('.cat').firstElementChild;
+    const fisher = document.querySelector('.fisher').firstElementChild;
+    const flying_fish = document.querySelector('.flying_fish').firstElementChild;
 
     //Changement chaque seconde des frames
     var x = 0;
-    var y = 0;
     setInterval(function()
     {
 
@@ -37,6 +38,9 @@ function changeFrame()
         if (x == 0)
         {
             cathand.setAttribute("src", "../images/cathandB.png");
+            cat.setAttribute("src", "../images/catB.png");
+            fisher.setAttribute("src", "../images/fisherB.png");
+            flying_fish.setAttribute("src", "../images/flying_fishA.png");
 
             x = 1;
         }
@@ -44,6 +48,9 @@ function changeFrame()
         else
         {
             cathand.setAttribute("src", "../images/cathandA.png");
+            cat.setAttribute("src", "../images/catA.png");
+            fisher.setAttribute("src", "../images/fisherA.png");
+            flying_fish.setAttribute("src", "../images/flying_fishB.png");
 
             x = 0;
         }

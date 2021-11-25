@@ -92,6 +92,7 @@ function formatNumber(n) {
 }
 
 function calculateMinouOwned() {
+    //Calcule le total de minous possédés
         total = 0;
     minous.forEach((minou) => {
         total += minou.owned;
@@ -119,10 +120,10 @@ function refresh() {
     displayFish();
 }
 
-/* setInterval(function save() {
-    localStorage["minous"] = JSON.stringify(minous);
-    localStorage.setItem("fish", fish);
-}, 1000); */
+setInterval(function save() {
+     localStorage["minous"] = JSON.stringify(minous);
+     localStorage.setItem("fish", fish);
+}, 1000);
 
 document.querySelector('.fish').addEventListener("click", function() {clicksn++;})
 setInterval(cps, 1000);
