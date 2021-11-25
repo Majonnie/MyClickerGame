@@ -1,7 +1,6 @@
-document.querySelector('.fish').addEventListener("click", function() {
+document.querySelector('.fish').addEventListener("mousedown", function() {
     console.log("down")
     document.querySelector('.fish').classList.remove("bounce");
-    document.querySelector('.fish').classList.add("bounce");
     /* const bounceTimeout = setTimeout(() => {
         clearTimeout(bounceTimeout);
         document.querySelector('.fish').classList.remove("bounce");
@@ -9,7 +8,7 @@ document.querySelector('.fish').addEventListener("click", function() {
 })
 document.querySelector('.fish').addEventListener("mouseup", function() {
     console.log("down")
-    document.querySelector('.fish').classList.remove("bounce");
+    document.querySelector('.fish').classList.add("bounce");
 })
 document.querySelector('.fish_img').addEventListener("mouseover", function() {
     console.log("hover")
