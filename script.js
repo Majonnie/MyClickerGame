@@ -3,9 +3,9 @@ function addFish(x) {
 }
 
 function displayFish() {
-    document.querySelector('.fishN').innerHTML = "Fish : " + formatNumber(fish);
-    document.querySelector('.fishS').innerHTML = "Fish/Second : " + formatNumber(fps);
-    document.querySelector('.fishC').innerHTML = "Fish/Click : " + formatNumber(clickValue);
+    document.querySelector('.fishN').innerHTML = "🐟 : " + formatNumber(fish);
+    document.querySelector('.fishS').innerHTML = "🐟/s : " + formatNumber(fps);
+    document.querySelector('.fishC').innerHTML = "🐟/click : " + formatNumber(clickValue);
 }
 
 function fishPerSec() {
@@ -77,7 +77,11 @@ function setStoreAttributes(minou) {
 function cardRefresh(minou) {
     var minouDiv = document.querySelector("."+minou.name);
     minouDiv.querySelector(".minou_name").innerHTML = minou.displayname+"<br>("+minou.owned+")";
-    minouDiv.querySelector(".minou_fps").innerHTML = "🐟/s<br>"+formatNumber(minou.owned * minou.fps);
+    if (minou.id === 1) {
+        minouDiv.querySelector(".minou_fps").innerHTML = "🐟/c<br>"+formatNumber(minou.owned * minou.fps);
+    } else {
+        minouDiv.querySelector(".minou_fps").innerHTML = "🐟/s<br>"+formatNumber(minou.owned * minou.fps);
+    }
     minouDiv.querySelector(".minou_price").innerHTML = "Price<br>"+formatNumber(minou.cost)+"🐟";
 }
 
@@ -92,7 +96,6 @@ function formatNumber(n) {
 }
 
 function calculateMinouOwned() {
-    //Calcule le total de minous possédés
         total = 0;
     minous.forEach((minou) => {
         total += minou.owned;
@@ -102,6 +105,7 @@ function calculateMinouOwned() {
 }
 
 function checkMinouThreshold() {
+    //Calcule le total de minous possédés
     minous.forEach((minou) => {
         if (fish >= minou.threshold && minou.visible == 0) {
             document.querySelector("."+minou.name).style.visibility = 'visible';
@@ -121,8 +125,8 @@ function refresh() {
 }
 
 setInterval(function save() {
-     localStorage["minous"] = JSON.stringify(minous);
-     localStorage.setItem("fish", fish);
+    localStorage["minous"] = JSON.stringify(minous);
+    localStorage.setItem("fish", fish);
 }, 1000);
 
 document.querySelector('.fish').addEventListener("click", function() {clicksn++;})

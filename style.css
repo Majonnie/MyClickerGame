@@ -6,7 +6,7 @@ html {
   height: 100vh;
   width: 100vw;
   margin: 0;
-
+  overflow: clip;
   font-family: Courier, Arial;
 }
 
@@ -54,20 +54,31 @@ body {
 /*game display*/
 .game {
   background-color: #5386e4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .fish {
-  width: 25%;
-  display: inline-block;
-  position: fixed;
+  height: 320px;
+  width: 300px;
+  position: absolute;
+  transform-origin: center;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
 }
 
-.fish img {
+.fish * {
+  height: 100%;
   width: 100%;
+}
+
+.fish_rotate {
+  background-image: url("images/fish.png");
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
 }
 /*end of game display*/
 
@@ -81,6 +92,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .stats > h1 {
