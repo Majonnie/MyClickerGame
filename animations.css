@@ -31,7 +31,6 @@
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
-  z-index: 9;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
@@ -47,10 +46,10 @@
   transform-origin: center center;
   transform: translate(-50%, -50%);
   transform: scaleX(-1);
-  z-index: 5;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
+  z-index: 1;
 }
 
 .fisheranim {
@@ -62,10 +61,42 @@
   left: 12%;
   transform-origin: center center;
   transform: translate(-50%, -50%);
-  z-index: 5;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
+  z-index: 1;
+}
+
+.boat {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 10%;
+  z-index: 10;
+}
+
+.netanim {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+  animation-name: boatflip;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.flipboat {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  animation-name: boat;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 /* animations */
@@ -135,5 +166,35 @@
   }
   100% {
     transform: translateX(-600%);
+  }
+}
+
+@keyframes boat {
+  0% {
+    transform: translateX(200%);
+  }
+  50% {
+    transform: translateX(-300%);
+  }
+  50.01% {
+    transform: translateX(-300%);
+  }
+  99.9% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes boatflip {
+  49.9% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+  99.9% {
+    transform: scaleX(-1);
   }
 }

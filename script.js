@@ -89,8 +89,10 @@ function cardRefresh(minou) {
 function formatNumber(n) {
     if (n >= 1000000 && n < 1000000000) {
         return (n / 1000000).toFixed(3)+"m";
-    } else if (n >= 1000000000) {
+    } else if (n >= 1000000000 && n < 1000000000000) {
         return (n / 1000000000).toFixed(3)+"M";
+    } else if (n >= 1000000000000) {
+        return (n / 1000000000000).toFixed(3)+"MM";
     } else {
         return n.toFixed(1);
     }

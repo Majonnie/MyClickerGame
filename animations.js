@@ -36,6 +36,7 @@ setInterval(function()
         if(document.querySelector(".flying") != null) {
             document.querySelector(".flying").style.backgroundImage = 'url("images/flying_fishA.png")';
         }
+            document.querySelector(".netanim").style.backgroundImage = 'url("images/netA.png")';
         x = 1;
     }
     else
@@ -43,6 +44,7 @@ setInterval(function()
         if(document.querySelector(".flying") != null) {
             document.querySelector(".flying").style.backgroundImage = 'url("images/flying_fishB.png")';
         }
+            document.querySelector(".netanim").style.backgroundImage = 'url("images/netB.png")';
         x = 0;
     }
 }, 300);
@@ -53,22 +55,14 @@ setInterval(function()
     //Pour toutes les animations en 2 frames
     if (y == 0)
     {
-        if (document.querySelector(".catanim") != null) {
         document.querySelector(".catanim").style.backgroundImage = 'url("images/catA.png")';
-        }
-        if (document.querySelector(".fisheranim") != null) {
             document.querySelector(".fisheranim").style.backgroundImage = 'url("images/fisherA.png")';
-        }
         y = 1;
     }
     else
     {
-        if (document.querySelector(".fisheranim") != null) {
             document.querySelector(".fisheranim").style.backgroundImage = 'url("images/fisherB.png")';
-        }
-        if (document.querySelector(".fisheranim") != null) {
             document.querySelector(".catanim").style.backgroundImage = 'url("images/catB.png")';
-        }
         y = 0;
     }
 }, 1000);
