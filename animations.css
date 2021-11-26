@@ -28,7 +28,7 @@
   transform-origin: center center;
   transform: translate(-50%, -50%);
   animation-name: flying-fish;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   background-size: cover;
@@ -204,10 +204,10 @@
 
 @keyframes flying-fish {
   0% {
-    transform: translateX(600%);
+    transform: translateX(1000%);
   }
   100% {
-    transform: translateX(-600%);
+    transform: translateX(-800%);
   }
 }
 

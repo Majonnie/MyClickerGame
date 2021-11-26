@@ -134,7 +134,7 @@ function refresh() {
 
 function showAnim(minou) {
     if (minou.owned >= 1 && minou.id != 1) {
-        document.querySelector("."+minou.name+"anim").style.visibility = 'visible';
+        document.querySelector("."+minou.name+"anim").removeAttribute('hidden');
     }
 }
 
