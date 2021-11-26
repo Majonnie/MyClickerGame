@@ -47,13 +47,11 @@ body {
   flex-direction: column;
 }
 
-.anim {
-  background-color: #c5fffd;
-}
-
 /*game display*/
 .game {
-  background-color: #5386e4;
+  background-image: url("images/fond.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   overflow: hidden;
   position: relative;
 }
@@ -66,7 +64,7 @@ body {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000;
+  z-index: 100;
 }
 
 .fish * {

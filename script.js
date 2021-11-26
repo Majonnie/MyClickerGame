@@ -46,6 +46,7 @@ function buyMinou(id) {
     var threshold = [25, 50, 100, 250, 1000];
     minou.owned += 1;
     fish -= minou.cost;
+    showAnim(minou);
     if (threshold.includes(minou.owned)) {
         minou.fps *= 2;
     }
@@ -96,6 +97,7 @@ function formatNumber(n) {
 }
 
 function calculateMinouOwned() {
+    //Calcule le total de minous possédés
         total = 0;
     minous.forEach((minou) => {
         total += minou.owned;
@@ -105,13 +107,17 @@ function calculateMinouOwned() {
 }
 
 function checkMinouThreshold() {
-    //Calcule le total de minous possédés
     minous.forEach((minou) => {
         if (fish >= minou.threshold && minou.visible == 0) {
             document.querySelector("."+minou.name).style.visibility = 'visible';
             minou.visible = 1;
         }
     })
+}
+
+function bonusFish() {
+    clickFish(clickValue*100);
+    document.querySelector('.flying').remove();
 }
 
 function cps() {
@@ -122,6 +128,12 @@ function cps() {
 function refresh() {
     getFps();
     displayFish();
+}
+
+function showAnim(minou) {
+    if (minou.owned >= 1 && minou.id != 1) {
+        document.querySelector("."+minou.name+"anim").style.visibility = 'visible';
+    }
 }
 
 setInterval(function save() {
@@ -136,9 +148,6 @@ refresh();
 fishPerSec();
 calculateMinouOwned()
 minous.forEach(cardRefresh);
+minous.forEach(showAnim);
 setInterval(checkStore, 10)
 checkMinouThreshold();
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
