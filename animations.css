@@ -37,7 +37,6 @@
 }
 
 .catanim {
-  visibility: hidden;
   position: absolute;
   width: 100px;
   height: 100px;
@@ -46,14 +45,27 @@
   transform-origin: center center;
   transform: translate(-50%, -50%);
   transform: scaleX(-1);
-  background-size: cover;
-  background-position: center;
-  background-clip: content-box;
   z-index: 1;
 }
 
-.fisheranim {
+.catanimA,
+.catanimB {
+  width: 100%;
+  height: 100%;
   visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.catanimA {
+  background-image: url("images/catA.png");
+}
+.catanimB {
+  background-image: url("images/catB.png");
+}
+
+.fisheranim {
   position: absolute;
   width: 130px;
   height: 200px;
@@ -61,10 +73,25 @@
   left: 12%;
   transform-origin: center center;
   transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.fisherA,
+.fisherB {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
-  z-index: 1;
+}
+
+.fisherA {
+  background-image: url("images/fisherA.png");
+}
+
+.fisherB {
+  background-image: url("images/fisherB.png");
 }
 
 .boat {
@@ -80,13 +107,28 @@
   width: 100%;
   height: 100%;
   transform-origin: center center;
-  background-size: cover;
-  background-position: center;
-  background-clip: content-box;
   animation-name: boatflip;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+.netA,
+.netB {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.netA {
+  background-image: url("images/netA.png");
+}
+
+.netB {
+  background-image: url("images/netB.png");
 }
 
 .flipboat {

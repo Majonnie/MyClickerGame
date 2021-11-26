@@ -36,7 +36,8 @@ setInterval(function()
         if(document.querySelector(".flying") != null) {
             document.querySelector(".flying").style.backgroundImage = 'url("images/flying_fishA.png")';
         }
-            document.querySelector(".netanim").style.backgroundImage = 'url("images/netA.png")';
+        document.querySelector(".netA").style.visibility = 'visible';
+        document.querySelector(".netB").style.visibility = 'hidden';
         x = 1;
     }
     else
@@ -44,7 +45,8 @@ setInterval(function()
         if(document.querySelector(".flying") != null) {
             document.querySelector(".flying").style.backgroundImage = 'url("images/flying_fishB.png")';
         }
-            document.querySelector(".netanim").style.backgroundImage = 'url("images/netB.png")';
+        document.querySelector(".netA").style.visibility = 'hidden';
+        document.querySelector(".netB").style.visibility = 'visible';
         x = 0;
     }
 }, 300);
@@ -55,14 +57,18 @@ setInterval(function()
     //Pour toutes les animations en 2 frames
     if (y == 0)
     {
-        document.querySelector(".catanim").style.backgroundImage = 'url("images/catA.png")';
-            document.querySelector(".fisheranim").style.backgroundImage = 'url("images/fisherA.png")';
+        document.querySelector(".catanimA").style.visibility = 'visible';
+        document.querySelector(".catanimB").style.visibility = 'hidden';
+        document.querySelector(".fisherA").style.visibility = 'visible';
+        document.querySelector(".fisherB").style.visibility = 'hidden';
         y = 1;
     }
     else
     {
-            document.querySelector(".fisheranim").style.backgroundImage = 'url("images/fisherB.png")';
-            document.querySelector(".catanim").style.backgroundImage = 'url("images/catB.png")';
+        document.querySelector(".catanimA").style.visibility = 'hidden';
+        document.querySelector(".catanimB").style.visibility = 'visible';
+        document.querySelector(".fisherA").style.visibility = 'hidden';
+        document.querySelector(".fisherB").style.visibility = 'visible';
         y = 0;
     }
 }, 1000);
