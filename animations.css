@@ -43,7 +43,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  top: 15.1%;
+  top: 13.4%;
   left: 65%;
   transform-origin: center center;
   transform: translate(-50%, -50%);
@@ -73,8 +73,8 @@
   position: absolute;
   width: 130px;
   height: 200px;
-  top: 17%;
-  left: 12%;
+  top: 19%;
+  left: 19%;
   transform-origin: center center;
   transform: translate(-50%, -50%);
   z-index: 1;
