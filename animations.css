@@ -21,11 +21,12 @@
 }
 
 /*Flying fish*/
+
 .flying {
   position: absolute;
   width: 70px;
   height: 70px;
-  top: 0%;
+  top: -2%;
   right: 50%;
   transform-origin: center center;
   transform: translate(-50%, -50%);
@@ -33,6 +34,19 @@
   animation-duration: 5s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
+}
+
+.flyingfish {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.cloud {
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-clip: content-box;
@@ -44,7 +58,7 @@
   width: 100px;
   height: 100px;
   top: 13.4%;
-  left: 65%;
+  left: 55%;
   transform-origin: center center;
   transform: translate(-50%, -50%);
   transform: scaleX(-1);
@@ -108,7 +122,7 @@
   z-index: 10;
 }
 
-.netanim {
+.boatflip {
   width: 100%;
   height: 100%;
   transform-origin: center center;
@@ -116,6 +130,11 @@
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+.netanim {
+  width: 100%;
+  height: 100%;
 }
 
 .netA,
@@ -146,7 +165,7 @@
   animation-timing-function: linear;
 }
 
-/*Tests swimmer*/
+/*Swimmer*/
 .swimmeranim {
   position: absolute;
   width: 160px;
@@ -180,6 +199,66 @@
   background-image: url("images/swimmerB.png");
 }
 
+/*Catcher*/
+.catcheranim {
+  position: absolute;
+  width: 110px;
+  height: 150px;
+  top: 12%;
+  left: 85%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.catcherA,
+.catcherB {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.catcherA {
+  background-image: url("images/catcherA.png");
+}
+.catcherB {
+  background-image: url("images/catcherB.png");
+}
+
+/*Mermaid*/
+.mermaidanim {
+  position: absolute;
+  transform-origin: -60% 0%;
+  width: 170px;
+  height: 200px;
+  top: 90%;
+  left: 5%;
+  z-index: 1;
+  animation-name: mermaid;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.mermaidA,
+.mermaidB {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.mermaidA {
+  background-image: url("images/mermaidA.png");
+}
+.mermaidB {
+  background-image: url("images/mermaidB.png");
+}
 
 /* animations */
 @keyframes rotate {
@@ -247,7 +326,7 @@
     transform: translateX(1000%);
   }
   100% {
-    transform: translateX(-800%);
+    transform: translateX(-1200%);
   }
 }
 
@@ -281,7 +360,7 @@
   }
 }
 
-/*Tests swimmer*/
+/*Swimmer*/
 @keyframes swimmer {
   0% {
     transform: translateY(5%);
@@ -294,5 +373,14 @@
   }
   100% {
     transform: translateY(5%);
+  }
+}
+
+@keyframes mermaid {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

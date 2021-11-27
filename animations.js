@@ -16,16 +16,19 @@ document.querySelector('.fish_img').addEventListener("mouseout", function() {
 var x = 0;
 setInterval(function() {
     x = Math.floor(Math.random() * 25 + 1);
-    console.log(x);
-    x = 25;
     if (x == 25) {
-        console.log('a');
-        const flyf = document.createElement("div");
-        flyf.className = "flying";
-        document.querySelector(".game").appendChild(flyf);
-        flyf.addEventListener("click", bonusFish);
-        timeoutFlyf = setTimeout(function() {
-            flyf.remove();
+        const flying = document.createElement("div");
+        flying.className = "flying";
+        document.querySelector(".game").appendChild(flying);
+        const flyingfish = document.createElement("div")
+        flyingfish.className = "flyingfish";
+        const cloud = document.createElement("div")
+        cloud.className = "cloud";
+        flying.appendChild(flyingfish);
+        flying.appendChild(cloud);
+        flyingfish.addEventListener("click", bonusFish);
+        setTimeout(function() {
+            flying.remove();
         }, 3990);
     }
 }, 4000)
@@ -37,7 +40,7 @@ setInterval(function()
     if (x == 0)
     {
         if(document.querySelector(".flying") != null) {
-            document.querySelector(".flying").style.backgroundImage = 'url("images/flying_fishA.png")';
+            document.querySelector(".flyingfish").style.backgroundImage = 'url("images/flying_fishA.png")';
         }
         document.querySelector(".netA").style.visibility = 'visible';
         document.querySelector(".netB").style.visibility = 'hidden';
@@ -46,7 +49,7 @@ setInterval(function()
     else
     {
         if(document.querySelector(".flying") != null) {
-            document.querySelector(".flying").style.backgroundImage = 'url("images/flying_fishB.png")';
+            document.querySelector(".flyingfish").style.backgroundImage = 'url("images/flying_fishB.png")';
         }
         document.querySelector(".netA").style.visibility = 'hidden';
         document.querySelector(".netB").style.visibility = 'visible';
@@ -68,6 +71,8 @@ setInterval(function()
         document.querySelector(".swimmerB").style.visibility = 'hidden';
         document.querySelector(".mermaidA").style.visibility = 'visible';
         document.querySelector(".mermaidB").style.visibility = 'hidden';
+        document.querySelector(".catcherA").style.visibility = 'visible';
+        document.querySelector(".catcherB").style.visibility = 'hidden';
 
         y = 1;
     }
@@ -81,6 +86,8 @@ setInterval(function()
         document.querySelector(".swimmerB").style.visibility = 'visible';
         document.querySelector(".mermaidA").style.visibility = 'hidden';
         document.querySelector(".mermaidB").style.visibility = 'visible';
+        document.querySelector(".catcherA").style.visibility = 'hidden';
+        document.querySelector(".catcherB").style.visibility = 'visible';
 
         y = 0;
     }

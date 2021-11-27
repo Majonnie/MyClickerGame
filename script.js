@@ -118,12 +118,11 @@ function checkMinouThreshold() {
 }
 
 function bonusFish() {
-    clickFish(clickValue*100);
-    document.querySelector('.flying').style.backgroundImage = 'url("images/temp_flyingfish_clicked.png")'; //À remplacer par un pouf de disparition
-    // clearTimeout(timeoutFlyf);
-    //L'animation du poisson volant se continue après avoir affiché l'image de disparition --> à régler
+    clickFish(clickValue*500);
+    document.querySelector('.cloud').style.backgroundImage = 'url("images/temp_flyingfish_clicked.png")'; //À remplacer par un pouf de disparition
+    document.querySelector('.flyingfish').remove();
     setTimeout(function() {
-        document.querySelector('.flying').remove();
+        document.querySelector('.cloud').style.backgroundImage = '';
     }, 1000);
 }
 
