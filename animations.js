@@ -75,6 +75,8 @@ setInterval(function()
         document.querySelector(".mermaidB").style.visibility = 'hidden';
         document.querySelector(".catcherA").style.visibility = 'visible';
         document.querySelector(".catcherB").style.visibility = 'hidden';
+        document.querySelector(".poseicatA").style.visibility = 'visible';
+        document.querySelector(".poseicatB").style.visibility = 'hidden';
 
         y = 1;
     }
@@ -90,6 +92,8 @@ setInterval(function()
         document.querySelector(".mermaidB").style.visibility = 'visible';
         document.querySelector(".catcherA").style.visibility = 'hidden';
         document.querySelector(".catcherB").style.visibility = 'visible';
+        document.querySelector(".poseicatA").style.visibility = 'hidden';
+        document.querySelector(".poseicatB").style.visibility = 'visible';
 
         y = 0;
     }
