@@ -41,7 +41,7 @@ setInterval(function()
     //Pour toutes les animations en 2 frames
     if (x == 0)
     {
-        if(document.querySelector(".flying") != null) {
+        if(document.querySelector(".flyingfish") != null) {
             document.querySelector(".flyingfish").style.backgroundImage = 'url("images/flying_fishA.png")';
         }
         document.querySelector(".netA").style.visibility = 'visible';
@@ -50,7 +50,7 @@ setInterval(function()
     }
     else
     {
-        if(document.querySelector(".flying") != null) {
+        if(document.querySelector(".flyingfish") != null) {
             document.querySelector(".flyingfish").style.backgroundImage = 'url("images/flying_fishB.png")';
         }
         document.querySelector(".netA").style.visibility = 'hidden';
