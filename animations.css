@@ -1,3 +1,4 @@
+/*Fish*/
 .fish_rotate {
   animation-name: rotate;
   animation-duration: 2s;
@@ -19,6 +20,7 @@
   animation-timing-function: ease-in-out;
 }
 
+/*Flying fish*/
 .flying {
   position: absolute;
   width: 70px;
@@ -36,6 +38,7 @@
   background-clip: content-box;
 }
 
+/*Cat*/
 .catanim {
   position: absolute;
   width: 100px;
@@ -48,8 +51,8 @@
   z-index: 1;
 }
 
-.catanimA,
-.catanimB {
+.catA,
+.catB {
   width: 100%;
   height: 100%;
   visibility: hidden;
@@ -58,13 +61,14 @@
   background-clip: content-box;
 }
 
-.catanimA {
+.catA {
   background-image: url("images/catA.png");
 }
-.catanimB {
+.catB {
   background-image: url("images/catB.png");
 }
 
+/*Fisher Cat*/
 .fisheranim {
   position: absolute;
   width: 130px;
@@ -94,6 +98,7 @@
   background-image: url("images/fisherB.png");
 }
 
+/*Cat Boat*/
 .boat {
   position: absolute;
   width: 300px;
@@ -140,6 +145,41 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+/*Tests swimmer*/
+.swimmeranim {
+  position: absolute;
+  width: 160px;
+  height: 200px;
+  top: 65%;
+  left: 75%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  animation-name: swimmer;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.swimmerA,
+.swimmerB {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.swimmerA {
+  background-image: url("images/swimmerA.png");
+}
+.swimmerB {
+  background-image: url("images/swimmerB.png");
+}
+
 
 /* animations */
 @keyframes rotate {
@@ -238,5 +278,21 @@
   }
   99.9% {
     transform: scaleX(-1);
+  }
+}
+
+/*Tests swimmer*/
+@keyframes swimmer {
+  0% {
+    transform: translateY(5%);
+  }
+  49.9% {
+    transform: translateY(-40%);
+  }
+  50% {
+    transform: translateY(-40%);
+  }
+  100% {
+    transform: translateY(5%);
   }
 }
