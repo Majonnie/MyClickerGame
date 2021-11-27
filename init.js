@@ -14,7 +14,7 @@ minous.forEach((minou) => {
     fpsdiv.className = "minou_fps flexone";
 
     carddiv.setAttribute("onclick", "buyMinou("+minou.id+")")
-    imgdiv.style.backgroundImage = 'url("images/'+minou.name+'A.png")';
+    imgdiv.style.backgroundImage = 'url("images/shop/'+minou.name+'.png")';
 
     carddiv.appendChild(namediv);
     carddiv.appendChild(imgdiv);
