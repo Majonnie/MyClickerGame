@@ -66,6 +66,8 @@ setInterval(function()
         document.querySelector(".fisherB").style.visibility = 'hidden';
         document.querySelector(".swimmerA").style.visibility = 'visible';
         document.querySelector(".swimmerB").style.visibility = 'hidden';
+        document.querySelector(".mermaidA").style.visibility = 'visible';
+        document.querySelector(".mermaidB").style.visibility = 'hidden';
 
         y = 1;
     }
@@ -77,6 +79,8 @@ setInterval(function()
         document.querySelector(".fisherB").style.visibility = 'visible';
         document.querySelector(".swimmerA").style.visibility = 'hidden';
         document.querySelector(".swimmerB").style.visibility = 'visible';
+        document.querySelector(".mermaidA").style.visibility = 'hidden';
+        document.querySelector(".mermaidB").style.visibility = 'visible';
 
         y = 0;
     }

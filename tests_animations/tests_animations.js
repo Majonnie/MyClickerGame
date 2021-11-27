@@ -27,9 +27,11 @@ function changeFrame()
     const cathand = document.querySelector('.cathand').firstElementChild;
     const cat = document.querySelector('.cat').firstElementChild;
     const fisher = document.querySelector('.fisher').firstElementChild;
+    const catcher = document.querySelector('.catcher').firstElementChild;
     const net = document.querySelector('.net').firstElementChild;
     const swimmer = document.querySelector('.swimmer').firstElementChild;
     const flying_fish = document.querySelector('.flying_fish').firstElementChild;
+    const mermaid = document.querySelector('.mermaid').firstElementChild;
 
     //Changement chaque seconde des frames
     var x = 0;
@@ -42,8 +44,10 @@ function changeFrame()
             cathand.setAttribute("src", "../images/cathandB.png");
             cat.setAttribute("src", "../images/catB.png");
             fisher.setAttribute("src", "../images/fisherB.png");
+            catcher.setAttribute("src", "../images/catcherB.png");
             net.setAttribute("src", "../images/netB.png");
             swimmer.setAttribute("src", "../images/swimmerB.png");
+            mermaid.setAttribute("src", "../images/mermaidB.png");
             flying_fish.setAttribute("src", "../images/flying_fishA.png");
 
             x = 1;
@@ -54,8 +58,10 @@ function changeFrame()
             cathand.setAttribute("src", "../images/cathandA.png");
             cat.setAttribute("src", "../images/catA.png");
             fisher.setAttribute("src", "../images/fisherA.png");
+            catcher.setAttribute("src", "../images/catcherA.png");
             net.setAttribute("src", "../images/netA.png");
             swimmer.setAttribute("src", "../images/swimmerA.png");
+            mermaid.setAttribute("src", "../images/mermaidA.png");
             flying_fish.setAttribute("src", "../images/flying_fishB.png");
 
             x = 0;
