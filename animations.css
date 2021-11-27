@@ -1,3 +1,28 @@
+/*Cat Hand*/
+
+.paw {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 100%;
+  left: 40%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  transform: rotate(68deg);
+  background-image: url("images/cathandA.png");
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+  z-index: 10000;
+}
+
+.pawclick {
+  animation-name: pawclick;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
 /*Fish*/
 .fish_rotate {
   animation-name: rotate;
@@ -382,5 +407,20 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes pawclick {
+  10% {
+    background-image: url("images/cathandB.png");
+  }
+  10% {
+    top: 70%;
+  }
+  40% {
+    background-image: url("images/cathandB.png");
+  }
+  50% {
+    background-image: url("images/cathandA.png");
   }
 }

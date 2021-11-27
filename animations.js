@@ -1,9 +1,11 @@
 //Animations du gros poisson
 document.querySelector('.fish_bounce').addEventListener("mousedown", function() {
     document.querySelector('.fish_bounce').classList.remove("bounce");
+    document.querySelector('.paw').classList.remove("pawclick");
 })
 document.querySelector('.fish_bounce').addEventListener("mouseup", function() {
     document.querySelector('.fish_bounce').classList.add("bounce");
+    document.querySelector('.paw').classList.add("pawclick");
 })
 document.querySelector('.fish_img').addEventListener("mouseover", function() {
     document.querySelector('.fish_img').classList.add("grow");
