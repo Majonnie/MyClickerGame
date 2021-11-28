@@ -113,8 +113,8 @@ body {
   align-items: center;
   text-align: center;
   font-weight: bold;
-  background-color: #e6de7c;
-  /* background-color: #a5dafd; */
+  /* background-color: #e6de7c; */
+  background-color: #94bcf0;
   margin: 1.5%;
   height: 25%;
   transition: box-shadow 0.1s;
