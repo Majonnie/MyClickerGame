@@ -119,7 +119,7 @@ function checkMinouThreshold() {
 
 function bonusFish() {
     clickFish(clickValue*500);
-    document.querySelector('.cloud').style.backgroundImage = 'url("images/temp_flyingfish_clicked.png")'; //À remplacer par un pouf de disparition
+    document.querySelector('.cloud').style.backgroundImage = 'url("images/pouf.png")';
     document.querySelector('.flyingfish').remove();
     setTimeout(function() {
         document.querySelector('.cloud').style.backgroundImage = '';
