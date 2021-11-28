@@ -4,7 +4,7 @@ function addFish(x) {
 
 function displayFish() {
     document.querySelector('.fishN').innerHTML = "🐟 : " + formatNumber(fish);
-    document.querySelector('.fishS').innerHTML = "🐟/s : " + formatNumber(fps);
+    document.querySelector('.fishS').innerHTML = "🐟/s : " + formatNumber(fps * multiplier);
     document.querySelector('.fishC').innerHTML = "🐟/click : " + formatNumber(clickValue);
 }
 
@@ -13,7 +13,7 @@ function fishPerSec() {
 }
 
 function addFps() {
-    clickFish(fps);
+    clickFish(fps * multiplier);
 }
 
 function clickFish(value) {
@@ -124,6 +124,35 @@ function bonusFish() {
     setTimeout(function() {
         document.querySelector('.cloud').style.backgroundImage = '';
     }, 1000);
+}
+
+document.querySelector(".boost").addEventListener("click", boost);
+function boost() {
+    multiplier = 10;
+    const boostDiv = document.querySelector(".boost")
+    boostDiv.removeEventListener("click", boost);
+    boostDiv.style.pointerEvents = "none";
+    boostDiv.style.backgroundColor = "#eb4c4c";
+    setTimeout(function() {
+        multiplier = 1;
+        boostDiv.style.backgroundColor = "#e6de7c";
+        boostDiv.style.filter = "grayscale(100%) brightness(40%)";
+    }, 30000);
+    setTimeout(function() {
+        boostDiv.addEventListener("click", boost);
+        boostDiv.style.pointerEvents = "";
+        boostDiv.style.filter = "";
+    }, 300000);
+    let cooldown = 300;
+    document.querySelector(".cooldown").innerHTML = cooldown+"s";
+    let cdtimer = setInterval(function() {
+        cooldown--;
+        document.querySelector(".cooldown").innerHTML = cooldown+"s";
+    }, 1000)
+    setTimeout(function() {
+        clearInterval(cdtimer);
+        document.querySelector(".cooldown").innerHTML = "Disponible";
+    }, 300000);
 }
 
 function cps() {

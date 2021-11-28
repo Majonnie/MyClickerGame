@@ -14,3 +14,4 @@ let fps = 0;
 let clickValue = 0;
 let total = 0;
 let clicksn = 0;
+let multiplier = 1;
