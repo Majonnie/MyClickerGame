@@ -16,7 +16,7 @@ Jeu consistant à obtenir un maximum de ressources en cliquant répétitiveme
   - Votre partie (poissons obtenus, minous achetés et leurs effets) est sauvegardée automatiquement à chaque seconde.
   En rechargeant la page ou en revenant sur le jeu bien plus tard, vous retrouverez donc votre partie telle qu'elle était.
   - Pour supprimer votre sauvegarde, et donc recommencer le jeu depuis le début, vous êtes obligés de passer par une manipulation relativement compliquée. Il vous faudra :
-    1. Accéder au mode développeur de votre navigateur ;
-    2. Dans l'onglet Application, accéder au Local Storage ;
-    3. Rapidement (moins d'une seconde pour éviter que la sauvegarde automatique ait lieu au même moment) supprimer l'unique fichier du Local Storage (clic droit + clear) et actualiser la page.
+    1) Accéder au mode développeur de votre navigateur ;
+    2) Dans l'onglet Application, accéder au Local Storage ;
+    3) Rapidement (moins d'une seconde pour éviter que la sauvegarde automatique ait lieu au même moment) supprimer l'unique fichier du Local Storage (clic droit + clear) et actualiser la page.
    
