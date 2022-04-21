@@ -1,176 +1,176 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  overflow: clip;
-  font-family: Courier, Arial;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: clip;
+    font-family: Courier, Arial;
 }
 
 body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .main_wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 @font-face {
-  font-family: "Another Danger";
-  src: url("Another Danger - Demo.otf");
+    font-family: "Another Danger";
+    src: url("Another Danger - Demo.otf");
 }
 
 .title {
-  text-align: center;
-  background-color: #10121b;
-  color: white;
-  font-family: "Another Danger", Arial;
+    text-align: center;
+    background-color: #10121b;
+    color: white;
+    font-family: "Another Danger", Arial;
 }
 
 .title span {
-  font-family: "Comic Sans MS", Arial;
+    font-family: "Comic Sans MS", Arial;
 }
 
 .clicker {
-  height: 100%;
-  display: flex;
+    height: 100%;
+    display: flex;
 }
 
 .left {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 /*game display*/
 .game {
-  background-image: url("images/fond.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  overflow: hidden;
-  position: relative;
+    background-image: url("images/fond.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .fish {
-  height: 320px;
-  width: 300px;
-  position: absolute;
-  transform-origin: center;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
+    height: 320px;
+    width: 300px;
+    position: absolute;
+    transform-origin: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
 .fish * {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .fish_rotate {
-  background-image: url("images/fish.png");
-  background-size: cover;
-  background-position: center;
-  background-clip: content-box;
+    background-image: url("images/fish.png");
+    background-size: cover;
+    background-position: center;
+    background-clip: content-box;
 }
 /*end of game display*/
 
 .right {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .stats {
-  background-color: #858ae3;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  overflow: hidden;
-  border-left: 5px solid #10121b;
-  border-bottom: 5px solid #10121b;
+    background-color: #858ae3;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow: hidden;
+    border-left: 5px solid #10121b;
+    border-bottom: 5px solid #10121b;
 }
 
 .stats > h1 {
-  height: inherit;
-  width: inherit;
-  margin: 0;
-  text-align: left;
-  padding-left: 5%;
+    height: inherit;
+    width: inherit;
+    margin: 0;
+    text-align: left;
+    padding-left: 5%;
 }
 
 .powerups {
-  background-color: #7667e6;
-  border-left: 5px solid #10121b;
-  border-bottom: 5px solid #10121b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: #7667e6;
+    border-left: 5px solid #10121b;
+    border-bottom: 5px solid #10121b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .powerups > .boost {
-  height: 80%;
-  width: 25%;
-  background-color: #94bcf0;
-  text-align: center;
-  font-weight: bold;
-  margin: 1.5%;
-  transition: box-shadow 0.1s;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+    height: 80%;
+    width: 25%;
+    background-color: #94bcf0;
+    text-align: center;
+    font-weight: bold;
+    margin: 1.5%;
+    transition: box-shadow 0.1s;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .powerups .boost:hover {
-  box-shadow: inset 0px 0px 0px 4px black;
-  cursor: pointer;
+    box-shadow: inset 0 0 0 4px black;
+    cursor: pointer;
 }
 
 .store {
-  border-left: 5px solid #10121b;
-  background-color: #6050dc;
-  overflow-y: auto;
+    border-left: 5px solid #10121b;
+    background-color: #6050dc;
+    overflow-y: auto;
 }
 
 /*Fiche d'un minou*/
 .card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
-  /* background-color: #e6de7c; */
-  background-color: #94bcf0;
-  margin: 1.5%;
-  height: 25%;
-  transition: box-shadow 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    /* background-color: #e6de7c; */
+    background-color: #94bcf0;
+    margin: 1.5%;
+    height: 25%;
+    transition: box-shadow 0.1s;
 }
 
 .card:hover {
-  box-shadow: inset 0px 0px 0px 4px black;
-  cursor: pointer;
+    box-shadow: inset 0 0 0 4px black;
+    cursor: pointer;
 }
 
 .picture {
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  z-index: 1000;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    z-index: 1000;
 }
 
 .picture img {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .flexone {
-  flex: 1;
+    flex: 1;
 }
 
 .flextwo {
-  flex: 2;
+    flex: 2;
 }
